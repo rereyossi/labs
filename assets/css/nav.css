@@ -1,0 +1,72 @@
+.navbar {
+  float: left;
+}
+.navbar ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.navbar ul:before,
+.navbar ul:after {
+  content: " ";
+  display: table;
+}
+.navbar ul:after {
+  clear: both;
+}
+.navbar ul li {
+  list-style: none;
+  float: left;
+}
+.navbar ul li a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.navbar ul li a:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+}
+.text-capital {
+  text-transform: capitalize;
+}
+.text-upper {
+  text-transform: uppercase;
+}
+.text-lower {
+  text-transform: lowercase;
+}
+.nopadding {
+  padding: 0px;
+}
+.margin-top {
+  margin-top: 20px;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}
+.margin-left {
+  margin-left: 20px;
+}
+.margin-right {
+  margin-right: 20px;
+}
+#nav-main {
+  background-color: blue;
+}
+#nav-main:before,
+#nav-main:after {
+  content: " ";
+  display: table;
+}
+#nav-main:after {
+  clear: both;
+}
+.nav-box {
+  float: left;
+  height: 50px !important;
+  line-height: 50px;
+  min-width: 50px;
+  background-color: red;
+}

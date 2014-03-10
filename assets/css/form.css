@@ -1,0 +1,57 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Open+Sans:400italic,400,700,600);
+@import url('bootstrap.css');
+h1 {
+  font-size: 3.64rem;
+}
+h2 {
+  font-size: 3.01rem;
+}
+h3 {
+  font-size: 2.38rem;
+}
+h4 {
+  font-size: 1.75rem;
+}
+h5 {
+  font-size: 1.4rem;
+}
+h6 {
+  font-size: 1.19rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form-group {
+  display: block;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  box-shadow: none;
+}
+.form-control select {
+  text-transform: capitalize;
+}
+.form-control:focus {
+  box-shadow: none;
+}
+label {
+  text-transform: capitalize;
+}

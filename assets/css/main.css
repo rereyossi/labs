@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Open+Sans:400italic,400,700,600);
+@import url('bootstrap.css');
+h1 {
+  font-size: 3.64rem;
+}
+h2 {
+  font-size: 3.01rem;
+}
+h3 {
+  font-size: 2.38rem;
+}
+h4 {
+  font-size: 1.75rem;
+}
+h5 {
+  font-size: 1.4rem;
+}
+h6 {
+  font-size: 1.19rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.text-capital {
+  text-transform: capitalize;
+}
+.text-upper {
+  text-transform: uppercase;
+}
+.text-lower {
+  text-transform: lowercase;
+}
+.nopadding {
+  padding: 0px;
+}
+.margin-top {
+  margin-top: 20px;
+}
+.margin-bottom {
+  margin-bottom: 20px;
+}
+.margin-left {
+  margin-left: 20px;
+}
+.margin-right {
+  margin-right: 20px;
+}
+.navbar {
+  float: left;
+}
+.navbar ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.navbar ul:before,
+.navbar ul:after {
+  content: " ";
+  display: table;
+}
+.navbar ul:after {
+  clear: both;
+}
+.navbar ul li {
+  list-style: none;
+  float: left;
+}
+.navbar ul li a {
+  display: block;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.navbar ul li a:hover {
+  background-color: #ffffff;
+  text-decoration: none;
+}
+#nav-main {
+  background-color: blue;
+}
+#nav-main:before,
+#nav-main:after {
+  content: " ";
+  display: table;
+}
+#nav-main:after {
+  clear: both;
+}
+.nav-box {
+  float: left;
+  height: 50px !important;
+  line-height: 50px;
+  min-width: 50px;
+  background-color: red;
+}
