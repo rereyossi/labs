@@ -1,34 +1,22 @@
-//extension for web 
-//text-transform
-.text-capital{
-	text-transform:capitalize;
-	//hurup depan capital
-}
-.text-upper{
-	text-transform:uppercase;  
-	//semua hurup capital
-}
-.text-lower{
-	text-transform:lowercase; 
-	//semua hurup kecil
-}
+
 //no padding
 .nopadding{
 	padding: 0px;
 }
 
 //margin
+@margin-base: 20px;
 .margin-top{
-	margin-top: 20px;
+	margin-top: @margin-base;
 }
 .margin-bottom{
-	margin-bottom: 20px;
+	margin-bottom: @margin-base;
 } 
 .margin-left{
-	margin-left: 20px;
+	margin-left: @margin-base;
 }
 .margin-right{
-	margin-right: 20px;
+	margin-right: @margin-base;
 }
 
 // clearfix
@@ -43,11 +31,37 @@
   }
 }
 
-// Mixin
+// horizontal center elemen
 .center-block() {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+
+// vertical center table base
+.center-vertical(){
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	width: 195px;
+	height: 205px;
+	border: 1px solid #bfbfbf;
+	margin: 0 auto;
+}
+
+
+// image figure
+.img{
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	img{
+		width: 100%;
+		display: block;
+		position: relative;
+		height: auto;
+	}
 }
 
 

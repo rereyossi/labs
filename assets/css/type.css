@@ -1,21 +1,24 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Open+Sans:400italic,400,700,600);
+html {
+  font-size: 62.5%;
+}
 h1 {
-  font-size: 3.64rem;
+  font-size: 2.4rem;
 }
 h2 {
-  font-size: 3.01rem;
+  font-size: 2.0rem;
 }
 h3 {
-  font-size: 2.38rem;
+  font-size: 1.5rem;
 }
 h4 {
-  font-size: 1.75rem;
+  font-size: 1.2rem;
 }
 h5 {
   font-size: 1.4rem;
 }
 h6 {
-  font-size: 1.19rem;
+  font-size: 1.4rem;
 }
 h1,
 h2,
@@ -23,6 +26,34 @@ h3,
 h4,
 h5,
 h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+small {
+  font-size: 60%;
+  color: #6f6f6f;
+  line-height: 0;
+}
+p {
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.11111rem;
+  text-rendering: optimizeLegibility;
+}
+a {
+  color: #008cba;
+}
+a:hover {
+  text-decoration: underline;
+}
+.text-capital {
+  text-transform: capitalize;
+}
+.text-upper {
+  text-transform: uppercase;
+}
+.text-lower {
+  text-transform: lowercase;
 }

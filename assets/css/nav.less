@@ -35,3 +35,49 @@
 	min-width: 50px;
 	background-color: red;
 }
+
+// list size
+@list-height: 50px;
+@list-width: 180px;
+// list color
+@list-background: #fff;
+@list-color: #333;
+// list hover
+@list-hover-background: @list-color;
+@list-hover-color: @list-background;
+// list active page
+@list-active-background:#333;
+@list-active-color: #fff;
+.list-main{
+    li{
+        a{
+            display: block;
+            overflow: hidden;
+            height: @list-height;
+            width: @list-width;
+            line-height: @list-height;
+            background-color: @list-background;
+            color: @list-color;
+            &:hover{
+                background-color: @list-hover-background;
+                color: @list-hover-color;
+            }
+        }
+    }
+
+    .active{
+        background-color: @list-active-background;
+        color: @list-active-color;
+    }
+}
+
+
+// inline list 
+.inline-list{
+    li{
+        display: inline-block;
+        a{
+            margin-left: 10px;
+        }
+    }
+}
