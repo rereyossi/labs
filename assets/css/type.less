@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Open+Sans:400italic,400,700,600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Roboto+Condensed:400,700);
 @font-family-sans-serif:  'Open Sans', lato, Helvetica Neue, Arial, sans-serif;
 @font-family-serif:       Georgia, "Times New Roman", Times, serif;
 @font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
@@ -7,7 +7,17 @@
 @font-size-base:          1.4rem;
 @font-size-large:         @font-size-base * 1.25; // ~18px
 @font-size-small:         @font-size-base * 0.85; // ~12px
-html { font-size: 62.5%; } 
+
+html { 
+	font-size: 62.5%; 
+	color: #979797;
+} 
+*{
+	font-size: 1.4rem;
+	line-height: 2.4rem;
+	font-family: 'Open Sans', sans-serif;
+}
+
 h1{
 	font-size:  2.4rem;
 }
@@ -15,10 +25,10 @@ h2{
 	font-size: 2.0rem;
 }
 h3{
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 }
 h4{
-	 font-size: 1.2rem;;
+	 font-size: 1.4rem;;
 }
 h5{
 	 font-size: 1.4rem
@@ -28,13 +38,16 @@ h6{
 }
 
 h1, h2, h3, h4, h5, h6{
+	font-family: 'Roboto Condensed', sans-serif;
+	text-transform: capitalize;
+	color: #333;
 	margin-top: 0;
 	margin-bottom: 0.5rem;
 }
 
 // small text 
 small{
-	font-size: 60%;
+	font-size: 80%;
 	color: rgb(111, 111, 111);
 	line-height: 0;
 }
@@ -43,8 +56,6 @@ small{
 p {
 	font-family: inherit;
 	font-weight: normal;
-	font-size: 1rem;
-	line-height: 1.6;
 	margin-bottom: 1.11111rem;
 	text-rendering: optimizeLegibility;
 }
@@ -52,6 +63,7 @@ p {
 // link
 a{
 	color: rgb(0, 140, 186);
+	text-decoration: none;
 	&:hover{
 		text-decoration: underline;
 	}

@@ -1,0 +1,12 @@
+@import url(../assets/css/main.css);
+.article-list {
+  margin-bottom: 20px;
+}
+.article-list .img {
+  width: 100%;
+  background-color: #DCDCDC;
+  height: 169px;
+}
+.article-list .content {
+  height: 169px;
+}

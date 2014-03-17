@@ -14,8 +14,15 @@
   clear: both;
 }
 .navbar ul li {
+  position: relative;
   list-style: none;
   float: left;
+}
+.navbar ul li:hover ul {
+  display: block;
+}
+.navbar ul li:hover ul ul {
+  display: none;
 }
 .navbar ul li a {
   display: block;
@@ -27,6 +34,31 @@
 .navbar ul li a:hover {
   background-color: #ffffff;
   text-decoration: none;
+}
+@media screen and ("max-height: 670px") {
+  .navbar ul {
+    /* style */
+  }
+}
+.navbar ul ul {
+  display: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  padding: 0;
+  position: relative;
+  left: 0;
+  background-color: #ed4e6e;
+  z-index: 9999;
+}
+.navbar ul ul li {
+  width: 100%;
+  position: relative;
+}
+.navbar ul ul li a {
+  display: block;
+  background: grey;
+}
+.navbar ul ul li ul {
+  left: 100%;
 }
 .nopadding {
   padding: 0px;
