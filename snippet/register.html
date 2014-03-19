@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <title>form vertical</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='../asset/css/mobile.css' />
+    <!-- prefixfree -->
+    <script src="../assets/js/prefixfree.js"></script>
+    <!-- validation form with javascript -->
+    <script src="../assets/js/jquery.validate.min.js "></script>
+    <!-- jquery -->
+    <script src="../assets/js/jquery-2.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container margin-top">
+        <div class="member-modal col-md-6">
+            <!-- login -->
+            <div class="login col-md-6">
+                <div class="msg-cation">
+
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label class="">username</label>
+                        <div class="">
+                            <input type="text" name="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="">password</label>
+                        <div class="">
+                            <input type="password" name="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="" id="input" value="" checked="checked">remember me
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <div class="">
+                            <button class="btn btn-primary pull-right">Login</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!-- register -->
+            <div class="register col-md-6">
+                <form>
+                    <div class="form-group">
+                        <label class="">email</label>
+                        <div class="">
+                            <input type="text" name="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="">password</label>
+                        <div class="">
+                            <input type="password" name="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="">konfirmasi password</label>
+                        <div class="">
+                            <input type="password" name="" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="">
+                            <button class="btn btn-primary pull-right">daftar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script>
+        $("form").validate();
+        </script>
+</body>
+
+</html>

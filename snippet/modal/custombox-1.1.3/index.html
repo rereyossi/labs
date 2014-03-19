@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>jQuery Custombox :: dixso.net</title>
+    <meta name="description" content="jQuery Modal Window Effects with transitions CSS3.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- og -->
+    <meta property="og:locale" content="en_US">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="jQuery Custombox">
+    <meta property="og:description" content="jQuery Modal Window Effects with transitions CSS3.">
+    <meta property="og:url" content="http://dixso.github.io/custombox/">
+    <meta property="og:image" content="http://dixso.net/wp-content/uploads/2013/09/jquery-custombox-v0.1b-1024x510-300x160.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@dixso9">
+    <meta name="twitter:creator" content="@dixso9">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css">
+
+    <!-- jQuery Custombox CSS -->
+    <link rel="stylesheet" href="src/jquery.custombox.css">
+
+    <!-- Demo page CSS -->
+    <link rel="stylesheet" href="demo/css/demo.css">
+
+</head>
+<body>
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5NNSVV"
+                      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5NNSVV');</script>
+    <!-- End Google Tag Manager -->
+
+    <a href="https://github.com/dixso/custombox" target="_blank"><img id="forkme" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" width="149" height="149"></a>
+    <div class="container">
+        <div class="page-header">
+            <h1>jQuery Custombox v1.1.3</h1>
+            <p class="lead">jQuery Modal Window Effects with transitions CSS3.</p>
+            <div class="me clearfix">
+                <p class="author">By <a href="http://dixso.net" target="_blank">Julio De La Calle</a>.</p>
+                <a href="https://twitter.com/dixso9" target="_blank" rel="nofollow" class="icon twitter" title="Twitter">Twitter</a>
+                <a href="https://github.com/dixso" target="_blank" rel="nofollow" class="icon github" title="GitHub">GitHub</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div id="sidebar" class="list-group">
+                    <div id="tooltip" class="popover top">
+                        <div class="arrow"></div>
+                        <div class="popover-content">
+                            <p>These are examples.</p>
+                        </div>
+                    </div>
+                    <a href="javascript:void(0);" class="list-group-item active" style="cursor: default;">Effects</a>
+                    <a href="#modal" class="list-group-item" id="fadein">Fadein</a>
+                    <a href="#modal" class="list-group-item" id="slide">Slide <em style="font-size: 11px;">(Random position: top, right, bottom, left or center)</em></a>
+                    <a href="#modal" class="list-group-item" id="newspaper">Newspaper</a>
+                    <a href="#modal" class="list-group-item" id="fall">Fall</a>
+                    <a href="#modal" class="list-group-item" id="sidefall">Sidefall</a>
+                    <a href="#modal" class="list-group-item" id="blur">Blur</a>
+                    <a href="#modal" class="list-group-item" id="flip">Flip <em style="font-size: 11px;">(Random position: vertical or horizontal)</em></a>
+                    <a href="#modal" class="list-group-item" id="sign">Sign</a>
+                    <a href="#modal" class="list-group-item" id="superscaled">Superscaled</a>
+                    <a href="#modal" class="list-group-item" id="slit">Slit</a>
+                    <a href="#modal" class="list-group-item" id="rotate">Rotate <em style="font-size: 11px;">(Random position: bottom or left)</em></a>
+                    <a href="#modal" class="list-group-item" id="letmein">Letmein</a>
+                    <a href="#modal" class="list-group-item" id="makeway">Makeway</a>
+                    <a href="#modal" class="list-group-item" id="slip">Slip</a>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <a href="https://github.com/dixso/custombox/archive/1.1.3.zip" class="download" data-ga="Download"><em class="glyphicon glyphicon-cloud-download"></em>Download</a>
+
+                <h3><em class="glyphicon glyphicon-bullhorn"></em> About Custombox:</h3>
+                <p>This plugin is created with native JavaScript but works perfectly with jQuery.<br>If you do not want to use jQuery click <a id="actiontutorial" href="javascript:void(0);">here</a>.</p>
+                <div id="tutorial">
+                    <p>1) Rename the file jquery.custombox.js by <b>custombox.js</b> (obviously).</p>
+                    <p>2) In the file jquery.custombox.js replace this code:</p>
+                        <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+// A really lightweight plugin wrapper around the constructor,
+// preventing against multiple instantiations with jQuery.
+$.fn[ cb ] = function ( options ) {
+    var args = arguments,
+        isElement = typeof HTMLElement === 'object' ? options instanceof HTMLElement : options && typeof options === 'object' && options !== null && options.nodeType === 1 && typeof options.nodeName === 'string';
+
+    if ( options === undefined || typeof options === 'object' ) {
+        if ( isElement ) {
+
+            if ( navigator.appName === 'Microsoft Internet Explorer' ) {
+                // Write a new regEx to find the version number.
+                var re = new RegExp('MSIE ([0-9]{1,}[.0-9]{0,})');
+
+                // If the regEx through the userAgent is not null.
+                if (re.exec(navigator.userAgent) != null) {
+                    //Set the IE version
+                    var version = parseInt(RegExp.$1);
+                }
+            }
+
+            if ( typeof version === 'undefined' || version >= 10 ) {
+                // Check time to avoid double click.
+                if ( options.getAttribute('data-' + cb) !== null && parseInt(options.getAttribute('data-' + cb)) + 1 > Math.round( new Date().getTime() / 1000 )) {
+                    return;
+                }
+
+                // Set time to avoid double click.
+                options.setAttribute('data-' + cb, Math.round( new Date().getTime() / 1000 ) );
+            }
+
+            $(options).each( function () {
+                $.data( this, cb, new Plugin( this, args[1] ) );
+            });
+
+        } else {
+            new Plugin( null, args[0] );
+        }
+    } else if ( typeof options === 'string' && options === 'close' ) {
+        $.data( this, cb, new Plugin( args[0], args[1] ) );
+    }
+};
+</pre>
+                        <p>By this:</p>
+                        <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+// A really lightweight plugin wrapper around the constructor,
+// preventing against multiple instantiations.
+window[ cb ] = function ( options ) {
+    var isElement = typeof HTMLElement === 'object' ? options instanceof HTMLElement : options && typeof options === 'object' && options !== null && options.nodeType === 1 && typeof options.nodeName === 'string';
+
+    if ( options === undefined || typeof options === 'object' ) {
+        if ( isElement ) {
+
+            if ( navigator.appName === 'Microsoft Internet Explorer' ) {
+                //Write a new regEx to find the version number
+                var re = new RegExp("MSIE ([0-9]{1,}[.0-9]{0,})");
+
+                //If the regEx through the userAgent is not null
+                if (re.exec(navigator.userAgent) != null) {
+                    //Set the IE version
+                    var version = parseInt(RegExp.$1);
+                }
+            }
+
+            if ( typeof version === 'undefined' || version >= 10 ) {
+                // Check time to avoid double click.
+                if ( options.getAttribute('data-' + cb) !== null && parseInt(options.getAttribute('data-' + cb)) + 1 > Math.round( new Date().getTime() / 1000 )) {
+                    return;
+                }
+
+                // Set time to avoid double click.
+                options.setAttribute('data-' + cb, Math.round( new Date().getTime() / 1000 ) );
+            }
+
+            new Plugin( arguments[0], arguments[1] );
+        } else {
+            new Plugin( null, arguments[0] );
+        }
+    } else if ( typeof options === 'string' && options === 'close' ) {
+        new Plugin( arguments[0], arguments[1] );
+    }
+};
+</pre>
+                <p>Call the plugin when the body is on load:</p>
+                <pre class="brush: js; toolbar: false; gutter: false; quick-code: false; html-script: true;">&lt;script&gt;
+window.onload = function () {
+    document.getElementById('example').addEventListener('click', function ( e ) {
+        custombox( this, {
+            effect: 'fadein'
+        });
+        e.preventDefault();
+    }, false );
+};
+&lt;/script&gt;</pre>
+                </div><!-- tutorial -->
+
+                <h3><em class="glyphicon glyphicon-question-sign"></em> How to use:</h3>
+                <div class="panel">
+                    <p>1) Include jQuery (Compatible with v1.7+):</p>
+                    <p>In just about every case, it's best to place all your script references at the end of the page, just before: <code>&lt;/body&gt;</code>.</p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">&lt;script src="//code.jquery.com/jquery-1.11.0.min.js"&gt;&lt;/script&gt;</pre>
+                </div>
+                <div class="panel">
+                    <p>2) Include jquery.custombox.js code:</p>
+                    <p>In just about every case, it's best to place all your script references at the end of the page, just before: <code>&lt;/body&gt;</code>.</p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">&lt;script src="src/jquery.custombox.js"&gt;&lt;/script&gt;</pre>
+                </div>
+                <div class="panel">
+                    <p>3) Include jquery.custombox.css code:</p>
+                    <p>Insert it in the section of your HTML document, after: <code>&lt;html&gt;</code>.</p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false; html-script: true;">&lt;link rel="stylesheet" href="src/jquery.custombox.css"&gt;</pre>
+                </div>
+                <div class="panel">
+                    <p>4) Call the plugin when the body is on load:</p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false; html-script: true;">&lt;script&gt;
+$(function () {
+    $('#element').on('click', function ( e ) {
+        $.fn.custombox( this );
+        e.preventDefault();
+    });
+});
+&lt;/script&gt;</pre>
+                </div>
+                <h3><em class="glyphicon glyphicon-cog"></em> Settings</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Property</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>url</td>
+                            <td>null</td>
+                            <td>Set the URL, ID or Class.</td>
+                        </tr>
+                        <tr>
+                            <td>cache</td>
+                            <td>false</td>
+                            <td>If set to false, it will force requested pages not to be cached by the browser only when send by AJAX.</td>
+                        </tr>
+                        <tr>
+                            <td>escKey</td>
+                            <td>true</td>
+                            <td>Allow the user to close the modal by pressing 'ESC'.</td>
+                        </tr>
+                        <tr>
+                            <td>eClose</td>
+                            <td>null</td>
+                            <td>Element ID or Class to close the modal.</td>
+                        </tr>
+                        <tr>
+                            <td>zIndex</td>
+                            <td>9999</td>
+                            <td>Overlay z-index: Number or auto.</td>
+                        </tr>
+                        <tr>
+                            <td>overlay</td>
+                            <td>true</td>
+                            <td>Show the overlay.</td>
+                        </tr>
+                        <tr>
+                            <td>overlayColor</td>
+                            <td>#000</td>
+                            <td>Overlay color.</td>
+                        </tr>
+
+                        <tr>
+                            <td>overlayOpacity</td>
+                            <td>0.8</td>
+                            <td>The overlay opacity level. Range: 0 to 1.</td>
+                        </tr>
+                        <tr>
+                            <td>overlayClose</td>
+                            <td>true</td>
+                            <td>Allow the user to close the modal by clicking the overlay.</td>
+                        </tr>
+                        <tr>
+                            <td>overlaySpeed</td>
+                            <td>200</td>
+                            <td>Sets the speed of the overlay, in milliseconds.</td>
+                        </tr>
+                        <tr>
+                            <td>customClass</td>
+                            <td>null</td>
+                            <td>Custom class to modal.</td>
+                        </tr>
+                        <tr>
+                            <td>width</td>
+                            <td>null</td>
+                            <td>Set a fixed total width.</td>
+                        </tr>
+                        <tr>
+                            <td>height</td>
+                            <td>null</td>
+                            <td>Set a fixed total height.</td>
+                        </tr>
+                        <tr>
+                            <td>effect</td>
+                            <td>fadein</td>
+                            <td>fadein | slide | newspaper | fall | sidefall | blur | flip | sign | superscaled | slit | rotate | letmein | makeway | slip.</td>
+                        </tr>
+                        <tr>
+                            <td>position</td>
+                            <td>null</td>
+                            <td>Only with effects: slide, flip and rotate. (top, right, bottom, left and center) | (vertical or horizontal) and output position sseparated by commas. Ex: 'top, bottom'.</td>
+                        </tr>
+                        <tr>
+                            <td>speed</td>
+                            <td>600</td>
+                            <td>Sets the speed of the transitions, in milliseconds.</td>
+                        </tr>
+                        <tr>
+                            <td>open</td>
+                            <td>null</td>
+                            <td>Callback that fires right before begins to open.</td>
+                        </tr>
+                        <tr>
+                            <td>complete</td>
+                            <td>null</td>
+                            <td>Callback that fires right after loaded content is displayed.</td>
+                        </tr>
+                        <tr>
+                            <td>close</td>
+                            <td>null</td>
+                            <td>Callback that fires once is closed.</td>
+                        </tr>
+                        <tr>
+                            <td>responsive</td>
+                            <td>true</td>
+                            <td>Sets if you like box responsive or not.</td>
+                        </tr>
+                        <tr>
+                            <td>scrollbar</td>
+                            <td>false</td>
+                            <td>Show scrollbar or hide automatically.</td>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>Error 404!</td>
+                            <td>Text to be displayed when there is an error.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3><em class="glyphicon glyphicon-plus"></em> Public Methods</h3>
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td>$.fn.custombox('close')</td>
+                        <td>Allow the user to close the modal.</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <h3>Custom</h3>
+                <div class="panel">
+                    <h4>Without overlay</h4>
+                    <p>- <a href="#modal" id="example1" title="Example without overlay">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example1').on('click', function ( e ) {
+    $.fn.custombox( this, {
+        overlay: false,
+        effect: 'fadein'
+    });
+    e.preventDefault();
+});</pre>
+                </div><!-- Without overlay -->
+
+                <div class="panel">
+                    <h4>Ajax</h4>
+                    <p>- <a href="demo/xhr/ajax.html" id="example2" title="Example with ajax">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example2').on('click', function ( e ) {
+    $.fn.custombox( this, {
+        effect: 'newspaper'
+    });
+    e.preventDefault();
+});</pre>
+                </div><!-- ajax -->
+
+                <div class="panel">
+                    <h4>Auto start</h4>
+                    <p>- <a href="demo/xhr/ajax.html" id="example3" title="Example with ajax">Example <em class="glyphicon glyphicon-hand-left"></em></a> <span id="countdown">5</span></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">$.fn.custombox({
+    url: 'demo/xhr/ajax.html'
+});</pre>
+                </div><!-- auto start -->
+
+                <div class="panel">
+                    <h4>Error :(</h4>
+                    <p>- <a href="noexist.html" id="example4" title="Example error">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example4').on('click', function ( e ) {
+    $.fn.custombox( this, {
+        effect: 'slit'
+    });
+    e.preventDefault();
+});</pre>
+                </div><!-- error -->
+
+                <div class="panel">
+                    <h4>Callbacks</h4>
+                    <p>- <a href="demo/xhr/ajax.html" id="example5" title="Callbacks">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example5').on('click', function ( e ) {
+    $.fn.custombox( this, {
+        open: function () {
+            alert('open');
+        },
+        complete: function () {
+            alert('complete');
+        },
+        close: function () {
+            alert('close');
+        }
+    });
+    e.preventDefault();
+});</pre>
+                </div><!-- callbacks -->
+
+                <div class="panel">
+                    <h4>Other style</h4>
+                    <p>- <a href="#modal2" id="example6" title="Other style">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example6').on('click', function ( e ) {
+    $.fn.custombox( this );
+    e.preventDefault();
+});
+</pre>
+                </div><!-- other style -->
+
+                <div class="panel">
+                    <h4>Custom effect 1</h4>
+                    <p>- <a href="#modal" id="example7" title="Custom effect">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example7').on('click', function ( e ) {
+    $.fn.custombox( this, {
+        effect:         'fadein',
+        overlayColor:   '#FFF',
+        overlayOpacity: 1,
+        customClass:    'justme',
+        speed:          200
+    });
+    e.preventDefault();
+});
+</pre>
+                </div><!-- custom effect-->
+
+                <div class="panel">
+                    <h4>Custom effect 2</h4>
+                    <p>- <a href="#modal" id="example8" title="Custom effect">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <h6>The Javascript:</h6>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example8').on('click', function ( e ) {
+    $.fn.custombox( this, {
+        effect:         'slide',
+        position:       'center',
+        customClass:    'customslide',
+        speed:          200
+    });
+    e.preventDefault();
+});
+</pre>
+                    <h6>The CSS (Prefix: custombox-show and custombox-close):</h6>
+                    <pre class="brush: css; toolbar: false; gutter: false; quick-code: false;">
+.custombox-close.customslide .custombox-modal-content {
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+    opacity: 1;
+    -webkit-transition-property: all;
+    -ms-transition-property: all;
+    transition-property: all;
+}
+</pre>
+                </div><!-- custom effect-->
+
+                <div class="panel">
+                    <h4>Custom open and close position.</h4>
+                    <p>- <a href="#modal" id="example9" title="Open effect top and close effect bottom">Example <em class="glyphicon glyphicon-hand-left"></em></a></p>
+                    <pre class="brush: js; toolbar: false; gutter: false; quick-code: false;">
+$('#example8').on('click', function ( e ) {
+    $.fn.custombox( this, {
+        effect:     'slide',
+        position:   'left, right'
+    });
+    e.preventDefault();
+});
+</pre>
+                </div><!-- custom open and close -->
+
+                <h3><em class="glyphicon glyphicon-search"></em> Support:</h3>
+                <div class="well">
+                    <p>- Find any bugs? <a href="https://github.com/dixso/custombox/issues" rel="nofollow" target="_blank">Issues</a>.</p>
+                </div>
+
+                <h3><em class="glyphicon glyphicon-star-empty"></em> Credits:</h3>
+                <div class="well">
+                    <p>- The animations CSS3 based on <a href="http://tympanus.net/codrops/2013/06/25/nifty-modal-window-effects/" rel="nofollow" target="_blank">Codrops</a>.</p>
+                    <p>- This script can run with <a href="http://jquery.com/" rel="nofollow" target="_blank">jQuery</a>.</p>
+                    <p>- The example page is built with <a href="http://getbootstrap.com/" rel="nofollow" target="_blank">Bootstrap 3</a>.</p>
+                    <p>- The page example code is built with <a href="http://alexgorbatchev.com/SyntaxHighlighter/" rel="nofollow" target="_blank">SyntaxHighlighter</a>.</p>
+                </div>
+            </div><!-- col-lg-8 -->
+        </div><!-- row -->
+    </div><!-- container -->
+
+    <div id="modal" style="display: none;" class="modal-example-content">
+        <div class="modal-example-header">
+            <button type="button" class="close" onclick="$.fn.custombox('close');">&times;</button>
+            <h4>jQuery Custombox</h4>
+        </div>
+        <div class="modal-example-body">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+    </div>
+
+    <div id="modal2" style="display: none;">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+
+    <!-- External JS -->
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js"></script>
+    <script src="http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushJScript.js"></script>
+    <script src="http://agorbatchev.typepad.com/pub/sh/3_0_83/scripts/shBrushCss.js"></script>
+    <script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js"></script>
+
+    <!-- jQuery Custombox JS -->
+    <script src="src/jquery.custombox.js"></script>
+
+    <!-- Demo page JS -->
+    <script src="demo/js/demo.js"></script>
+
+    <script>
+        if ( $(window).width() > 360 ) {
+            SyntaxHighlighter.all();
+        }
+    </script>
+    </body>
+</html>

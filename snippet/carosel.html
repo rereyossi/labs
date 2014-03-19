@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <title>form vertical</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <link rel='stylesheet' media='screen and (min-width: 701px) and (max-width: 900px)' href='../asset/css/mobile.css' />
+    <!-- prefixfree -->
+    <script src="../assets/js/prefixfree.js"></script>
+    <!-- validation form with javascript -->
+    <script src="../assets/js/jquery.validate.min.js "></script>
+    <!-- jquery -->
+    <script src="../assets/js/jquery-2.1.0.min.js"></script>
+    <!-- boostrap -->
+    <script src="../assets/js/bootstrap.min.js"></script>
+
+    <style>
+.report-carousel .carousel-inner {
+    margin-left: 5%;
+    max-height: 75px;
+    overflow: hidden;
+    width: 90%;
+}
+
+.report-carousel .carousel-inner .item {
+    display: inline-block;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="report-category-carousel" class="carousel report-carousel" ng-hide="reportCategorySelected()" carousel="">
+    <div class="carousel-inner">
+        <div class="item" ng-repeat="category in reportCategories">
+            <button class="btn btn-link" ng-dblclick="selectCategory(category)" title="{{ category.name }}">
+                <img src="{{ category.src }}" alt="{{ category.name }}">
+            </button>
+        </div>
+    </div>
+
+    <a href="#" class="carousel-control left">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a href="#" class="carousel-control right">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+    </div>
+
+
+    <script>
+ use strict';
+ 
+angular.module('myApp').directive('carousel', function () {
+ 
+    var carouselInner, items, prev, next,
+        direction, first, last,
+        widthToMove, slider, clone,
+        event;
+ 
+    function carousel (scope, element) {
+ 
+        carouselInner = element.find('.carousel-inner');
+        items = carouselInner.find('.item');
+        prev = element.find('.carousel-control.left');
+        next = element.find('.carousel-control.right');
+ 
+        assignControlClicks();
+    }
+ 
+    function assignControlClicks () {
+ 
+        prev.on('click', function (e) {
+            e.preventDefault();
+            event = e;
+            slide('right');
+        });
+        next.on('click', function (e) {
+            e.preventDefault();
+            event = e;
+            slide('left');
+        });
+    }
+ 
+    function slide (dir, event) {
+ 
+        updateItems();
+ 
+        direction = dir;
+        first = $(items[0]);
+        last = $(items[items.length - 1]);
+ 
+        widthToMove = -first.width();
+        clone = getClone();
+ 
+        /*
+         * If left, animate, remove first, append clone
+         * If right, .before clone, animate, remove last
+         */
+        if (direction === 'left') {
+            slideLeft();
+        } else if (direction === 'right') {
+            slideRight();
+        }
+    }
+ 
+    function updateItems () {
+ 
+        carouselInner = $(event.target).closest('.carousel').find('.carousel-inner');
+ 
+        items = carouselInner.find('.item');
+    }
+ 
+    function getClone () {
+ 
+        return (direction === 'left' ? first : last).closest('div.item').clone();
+    }
+ 
+    function slideLeft () {
+        
+        slider = first;
+        animateSlide(widthToMove, finishLeftSlide);
+    }
+ 
+    function finishLeftSlide () {
+ 
+        first.remove();
+        carouselInner.append(clone);
+    }
+ 
+    function slideRight () {
+        
+        slider = clone;
+        clone.css('margin-left', widthToMove + 'px');
+        first.before(clone);
+        animateSlide(0, finishRightSlide);
+    }
+ 
+    function finishRightSlide () {
+        last.remove();
+    }
+ 
+    function animateSlide (slideTo, afterSlide) {
+        slider.animate( { marginLeft: slideTo + 'px' }, 700, 'swing', afterSlide);
+    }
+ 
+    return {
+        restrict: 'A',
+        link: carousel
+    };
+ 
+});
+    </script>
+</body>
+
+</html>

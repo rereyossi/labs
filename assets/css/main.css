@@ -66,9 +66,13 @@ a:hover {
 .text-lower {
   text-transform: lowercase;
 }
+.text-title {
+  margin-bottom: 15px;
+  text-transform: capitalize;
+}
 .form-group {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .form-group:before,
 .form-group:after {
@@ -80,7 +84,6 @@ a:hover {
 }
 .form-group label {
   display: inline-block;
-  margin-bottom: 7px;
 }
 .form-control {
   display: block;
@@ -111,6 +114,10 @@ label {
 .form-inline:after {
   clear: both;
 }
+.form-inline .form-group {
+  display: inline;
+  float: left;
+}
 .form-vertical label {
   text-align: right;
 }
@@ -123,13 +130,12 @@ textarea {
   min-height: 20px;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding-left: 35px;
 }
 .radio input,
 .checkbox input {
   float: left;
   margin-left: -20px;
-  margin: 4px 4px 0 0;
+  margin: 6px 4px 0 0;
   box-sizing: border-box;
   padding: 0;
   line-height: normal;
@@ -156,8 +162,15 @@ textarea {
 .checkbox-inline .radio,
 .radio-inline .checkbox,
 .checkbox-inline .checkbox {
+  padding-left: 20px;
   float: left;
   display: inline;
+}
+.radio-vertical .radio,
+.checkbox-vertical .radio,
+.radio-vertical .checkbox,
+.checkbox-vertical .checkbox {
+  padding-left: 20px;
 }
 .nopadding {
   padding: 0px;
@@ -174,6 +187,14 @@ textarea {
 .margin-right {
   margin-right: 20px;
 }
+.container:before,
+.container:after {
+  content: " ";
+  display: table;
+}
+.container:after {
+  clear: both;
+}
 .img {
   position: relative;
   overflow: hidden;
@@ -184,6 +205,12 @@ textarea {
   display: block;
   position: relative;
   height: auto;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
 }
 #nav-main {
   background-color: #a9d6f2;
@@ -294,9 +321,6 @@ textarea {
 .list-inline li {
   display: inline-block;
 }
-.list-inline li a {
-  margin-left: 10px;
-}
 ul {
   margin: 0;
   padding: 0;
@@ -337,8 +361,6 @@ ul li {
   color: #49a5ff;
 }
 .btn {
-  margin-top: 10px;
-  margin-bottom: 10px;
   text-transform: capitalize;
   text-decoration: none;
   font: inherit;
@@ -385,4 +407,59 @@ ul li {
 .btn-third:focus,
 .btn-third:active {
   background-color: #f3cd29;
+}
+.alert {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 8px;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  transform: 0.25s;
+}
+.alert a {
+  text-decoration: none;
+}
+.alert a:hover {
+  text-decoration: none;
+}
+.alert-warning {
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+#carosel-main .item img {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.info {
+  background-color: #3C3C3C;
+}
+.info #menu-bottom {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.info #menu-bottom h3 {
+  color: #AFAFAF;
+}
+.info #menu-bottom a {
+  color: #fff;
+  trasition: 0.8s;
+}
+.info #menu-bottom a:hover {
+  transform: translateX(10px);
+}
+.connect {
+  background-color: #2A2A2A;
+}
+.connect .solmed h3 {
+  display: inline-block;
+}
+.connect .newsletter .form-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.connect .newsletter .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }

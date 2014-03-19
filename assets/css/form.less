@@ -7,11 +7,10 @@
 
 .form-group{
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     .clearfix();
         label{
         display: inline-block;
-        margin-bottom: 7px;
     }
 }
 
@@ -44,6 +43,10 @@ label {
 // form inline
 .form-inline{
     .clearfix();
+    .form-group{
+        display: inline;
+        float: left;
+    }
 }
 
 // form vertical 
@@ -69,11 +72,10 @@ textarea{
     min-height: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-left: 35px;
     input{
         float: left;
         margin-left: -20px;
-        margin: 4px 4px 0 0;
+        margin: 6px 4px 0 0;
         box-sizing: border-box;
         padding: 0;
         line-height: normal;
@@ -90,8 +92,14 @@ textarea{
 .radio-inline, .checkbox-inline{
    .clearfix();
     .radio, .checkbox{
+        padding-left:20px;
         float: left;
         display: inline;
     }
 }
 
+.radio-vertical, .checkbox-vertical{
+    .radio, .checkbox{
+        padding-left:20px;
+    }
+}
