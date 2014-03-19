@@ -1,11 +1,16 @@
-@alert-radius:3px;
-
+@alert-radius:@radius;
+@alert-primary:         #428bca;
+@alert-success:         #5cb85c;
+@alert-info:            #5bc0de;
+@alert-warning:         #f0ad4e;
+@alert-danger:          #d9534f;
 
 .alert{
 	display: block;
 	box-sizing: border-box;
 	width: 100%;
 	padding: 12px 8px;
+	transition: 0.8s;
 	border-radius: @alert-radius;
 	margin-bottom: 20px;
 	transform: 0.25s;
@@ -17,8 +22,16 @@
 	}
 }
 
+// alert warning
 .alert-warning{
-	background-color: #f2dede;
-	border-color: #ebccd1;
-	color: #a94442;
+	background-color: @alert-warning;
+	border-color: darken(@alert-warning);
+	color: darken(@alert-warning);
+}
+
+// alert danger
+.alert-danger{
+	background-color: @alert-danger;
+	border-color: darken(@alert-danger);
+	color: darken(@alert-danger);
 }
