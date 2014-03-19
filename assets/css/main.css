@@ -440,7 +440,7 @@ ul li {
   padding-bottom: 20px;
 }
 .info #menu-bottom h3 {
-  color: #AFAFAF;
+  color: #afafaf;
 }
 .info #menu-bottom a {
   color: #fff;
@@ -450,10 +450,15 @@ ul li {
   transform: translateX(10px);
 }
 .connect {
+  padding-top: 20px;
+  padding-bottom: 20px;
   background-color: #2A2A2A;
 }
-.connect .solmed h3 {
-  display: inline-block;
+.connect h3 {
+  color: #afafaf;
+}
+.connect .newsletter .form-group {
+  margin-bottom: 0;
 }
 .connect .newsletter .form-control {
   border-top-right-radius: 0;

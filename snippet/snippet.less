@@ -1,3 +1,5 @@
+@color-text-primary: #333;
+@color-text-second: #AFAFAF; 
 // carosel main start=================================
 #carosel-main{
 	.item{
@@ -16,7 +18,7 @@
 	padding-top: 20px;
 	padding-bottom: 20px;
 	h3{
-		color: #AFAFAF;
+		color: @color-text-second;
 	}
 	a{
 		color: #fff;
@@ -31,13 +33,16 @@
 
 // conect for solmed and newsletter
 .connect{
+	padding-top: 20px;
+	padding-bottom: 20px;
 	background-color: #2A2A2A;
-	.solmed{
-		h3{
-			display: inline-block;
-		}
+	h3{
+		color: @color-text-second;
 	}
 	.newsletter{
+		.form-group{
+			margin-bottom: 0;
+		}
 		.form-control{
 			border-top-right-radius: 0;
 			border-bottom-right-radius: 0;
