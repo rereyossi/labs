@@ -53,3 +53,87 @@
 		}
 	}
 }
+
+
+// product small 
+.product-small{
+	padding: 0px;
+	figure{
+		padding: 10px;
+		width: 100%;
+	}
+	img{
+		-webkit-transition: all 0.5s;
+		   -moz-transition: all 0.5s;
+		    -ms-transition: all 0.5s ;
+		     -o-transition: all 0.5s ;
+		        transition: all 0.5s ;
+	}
+	figcaption{
+		text-transform: capitalize;
+		background-color: grey;
+		padding: 10px;
+		text-align: center;
+	}
+	&:hover{
+		img{
+			-webkit-transform: scale(1.7deg);
+			   -moz-transform: scale(1.7deg);
+			    -ms-transform: scale(1.7deg);
+			     -o-transform: scale(1.7deg);
+			        transform: scale(1.7deg);
+		}
+	}
+
+}
+
+// product list 
+.product-list{
+	padding: 0px;
+	figure{
+		width: 100%;
+		height: 400px;
+
+	}
+	figcaption{
+		background-color: grey;
+		padding: 10px;
+		height: 80px;
+		text-align: center;
+		color: @color-text;
+		.cost{
+			background-color: @color-primary;
+			padding: 12px 8px;
+		
+		}
+		.cart{
+			background-color: @color-second;
+			padding: 12px 8px;
+		}
+	}
+}
+
+// search-main
+
+.search-main{
+		.form-inline{
+			display: inline;
+			margin-left: auto;
+			margin-right: auto;
+			.clearfix();
+		}
+		.form-group{
+			margin-bottom: 0;
+		}
+		.form-control{
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+			height: 45px;
+			width: 300px;
+		}
+		.btn{
+			border-top-left-radius: 0;
+			border-bottom-left-radius: 0;
+			height: 45px;
+		}
+}
