@@ -5,7 +5,7 @@
 }
 
 //margin
-@margin-base: 20px;
+
 .margin-top{
 	margin-top: @margin-base;
 }
@@ -20,7 +20,7 @@
 }
 
 // clearfix
-.clearfix() {
+.clearfix{
   &:before,
   &:after {
     content: " ";
@@ -31,31 +31,30 @@
   }
 }
 
-.row(){
+.row{
 	left: -15px;
 	right: -15px;
-	.clearfix();
+	.clearfix;
 }
 .container{
-	.clearfix();
+	.clearfix;
 }
 // horizontal center elemen
-.center-block() {
+.center-inline{
   display: block;
   margin-left: auto;
   margin-right: auto;
+  .clearfix;
 }
 
 
 // vertical center table base
-.center-vertical(){
+.center-vertical{
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
-	width: 195px;
-	height: 205px;
-	border: 1px solid #bfbfbf;
-	margin: 0 auto;
+	width: inherit;
+	height: inherit;
 }
 
 
@@ -74,12 +73,4 @@
 	}
 }
 
-
-// float right 
-.pull-right{
-	float: right;
-}
-.pull-left{
-	float: left;
-}
 

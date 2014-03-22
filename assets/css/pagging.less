@@ -4,36 +4,45 @@
 @pagging-margin-left: 5px;
 
 // pagging color
-@pagging-background: #9AD2FF;
-@pagging-color: #333;
+@pagging-background: @color-base;
+@pagging-color: @color-text-primary;
+@pagging-color-line: @color-line-primary;
 
 // pagging radius 
-@pagging-radius: 3px;
-@pagging-out-radius: 5px;
+@pagging-radius: 3px;  // radius for all li
+@pagging-out-radius: 5px; // radius for first and last li
 
 // pagging hover 
-@pagging-hover-color: #fff;
-@pagging-hover-background: #49A5FF;
+@pagging-hover-color: @color-base;
+@pagging-hover-background: @color-primary;
 
 // pagging active
-@pagging-active-color: #fff;
-@pagging-active-background: #49A5FF;
+// pagging background active follow ative page
+@pagging-active-color: @color-base;
+@pagging-active-background: @color-primary;
+
 .pagging-main {
 display: inline-block;
     li {
+        .clearfix;
         list-style: none;
         display: inline-block;
+        float: left;
+        margin-left: 5px;
         a {
-            transition: .25s;
+            transition: @transite-time;
             position: relative;
             float: left;
             padding: 6px 12px;
             line-height: 1.42857143;
             text-decoration: none;
             background-color: @pagging-background;
-            border: 1px solid #ddd;
+            border-width: 1px;
+            border-color: @pagging-color-line;
+            border-style: solid;
             &:hover{
                 background-color: @pagging-hover-background;
+                color: @pagging-hover-color;
             }
         }
     }

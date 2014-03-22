@@ -1,12 +1,12 @@
-@navbar-background: #a9d6f2;
-@navbar-hover-background: #53BDFF;
-@navbar-color:#fff;
+@navbar-background: @color-primary;
+@navbar-hover-background: darken(@color-primary, 20%);
+@navbar-color: @color-text-primary;
 @navbar-height: 50px;
 @navbar-padding: 15px;
 @nav-dropdown-width: 180px;
 #nav-main{
     background-color: @navbar-background;
-    .clearfix();
+    .clearfix;
 }
  .navbar {
     float: left;
@@ -15,7 +15,7 @@
     ul {
         margin-top: 0;
         margin-bottom: 0;
-        .clearfix();
+        .clearfix;
         li {
             position: relative;
             list-style: none;

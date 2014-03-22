@@ -1,8 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Source+Sans+Pro:400,600,700);
 @import url('bootstrap.css');
+@import url('../font-awesome/css/font-awesome.min.css');
 html {
   font-size: 62.5%;
-  color: #979797;
+  color: #333;
 }
 * {
   font-size: 1.4rem;
@@ -36,7 +37,6 @@ h6 {
   line-height: 3.7rem;
   font-family: 'Source Sans Pro', sans-serif;
   text-transform: capitalize;
-  color: #333;
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -49,7 +49,6 @@ p {
   margin-top: 0;
   font-family: inherit;
   font-weight: normal;
-  margin-bottom: 1.11111rem;
   text-rendering: optimizeLegibility;
   margin-bottom: 10px;
 }
@@ -72,6 +71,7 @@ a:hover {
 .text-title {
   margin-bottom: 10px;
   text-transform: capitalize;
+  text-decoration: none;
 }
 .form-group {
   display: block;
@@ -190,6 +190,26 @@ textarea {
 .margin-right {
   margin-right: 20px;
 }
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+.row {
+  left: -15px;
+  right: -15px;
+}
+.row:before,
+.row:after {
+  content: " ";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
 .container:before,
 .container:after {
   content: " ";
@@ -197,6 +217,26 @@ textarea {
 }
 .container:after {
   clear: both;
+}
+.center-inline {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-inline:before,
+.center-inline:after {
+  content: " ";
+  display: table;
+}
+.center-inline:after {
+  clear: both;
+}
+.center-vertical {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  width: inherit;
+  height: inherit;
 }
 .img {
   background-color: #696969;
@@ -211,14 +251,8 @@ textarea {
   position: relative;
   height: auto;
 }
-.pull-right {
-  float: right;
-}
-.pull-left {
-  float: left;
-}
 #nav-main {
-  background-color: #a9d6f2;
+  background-color: #4ea9f4;
 }
 #nav-main:before,
 #nav-main:after {
@@ -230,7 +264,7 @@ textarea {
 }
 .navbar {
   float: left;
-  background-color: #a9d6f2;
+  background-color: #4ea9f4;
   text-transform: capitalize;
 }
 .navbar ul {
@@ -272,7 +306,7 @@ textarea {
   padding-right: 15px;
 }
 .navbar ul li a:hover {
-  background-color: #53bdff;
+  background-color: #0d77cf;
   text-decoration: none;
 }
 .navbar ul ul {
@@ -339,19 +373,32 @@ ul li {
 .pagging-main li {
   list-style: none;
   display: inline-block;
+  float: left;
+  margin-left: 5px;
+}
+.pagging-main li:before,
+.pagging-main li:after {
+  content: " ";
+  display: table;
+}
+.pagging-main li:after {
+  clear: both;
 }
 .pagging-main li a {
-  transition: .25s;
+  transition: 0.5s;
   position: relative;
   float: left;
   padding: 6px 12px;
   line-height: 1.42857143;
   text-decoration: none;
-  background-color: #9ad2ff;
-  border: 1px solid #ddd;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: #dddddd;
+  border-style: solid;
 }
 .pagging-main li a:hover {
-  background-color: #49a5ff;
+  background-color: #4ea9f4;
+  color: #ffffff;
 }
 .pagging-main .first {
   border-top-left-radius: 5px;
@@ -363,7 +410,7 @@ ul li {
 }
 .pagging-main .active {
   background-color: #ffffff;
-  color: #49a5ff;
+  color: #4ea9f4;
 }
 .btn {
   text-transform: capitalize;
@@ -511,7 +558,7 @@ ul li {
   padding-bottom: 20px;
 }
 .info #menu-bottom h3 {
-  color: #afafaf;
+  color: lighter(#4ea9f4, 40%);
 }
 .info #menu-bottom a {
   color: #fff;
@@ -526,7 +573,7 @@ ul li {
   background-color: #2A2A2A;
 }
 .connect h3 {
-  color: #afafaf;
+  color: lighter(#4ea9f4, 40%);
 }
 .connect .newsletter .form-group {
   margin-bottom: 0;
@@ -538,33 +585,6 @@ ul li {
 .connect .newsletter .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
-}
-.product-small {
-  padding: 0px;
-}
-.product-small figure {
-  padding: 10px;
-  width: 100%;
-}
-.product-small img {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s ;
-  -o-transition: all 0.5s ;
-  transition: all 0.5s ;
-}
-.product-small figcaption {
-  text-transform: capitalize;
-  background-color: grey;
-  padding: 10px;
-  text-align: center;
-}
-.product-small:hover img {
-  -webkit-transform: scale(1.7deg);
-  -moz-transform: scale(1.7deg);
-  -ms-transform: scale(1.7deg);
-  -o-transform: scale(1.7deg);
-  transform: scale(1.7deg);
 }
 .product-list {
   padding: 0px;
@@ -578,9 +598,7 @@ ul li {
   padding: 10px;
   height: 80px;
   text-align: center;
-}
-.product-list figcaption .cost {
-  background-color: #4ea9f4;
+  color: #333333;
 }
 .search-main .form-inline {
   display: inline;
