@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Source+Sans+Pro:400,600,700);
 @import url('bootstrap.css');
 @import url('../font-awesome/css/font-awesome.min.css');
+@import url('../animate/animate.css');
 html {
   font-size: 62.5%;
   color: #333;
@@ -428,6 +429,7 @@ ul li {
   font-size: 14px;
   line-height: 1.42857143;
   border-radius: 3px;
+  transition: 0.5s;
 }
 .btn:hover {
   text-decoration: none;
@@ -486,65 +488,58 @@ ul li {
   border-color: #b52b27;
   color: #b52b27;
 }
-#tabs_wrapper {
-  width: 422px;
+.tabs-main {
+  display: block;
 }
-#tabs_container {
-  border-bottom: 1px solid #ccc;
+.tabs-main .tabs {
+  overflow: hidden;
+  background-color: #4ea9f4;
 }
-#tabs {
-  list-style: none;
-  padding: 5px 0 4px 0;
-  margin: 0 0 0 10px;
-  font: 0.75em arial;
-}
-#tabs li {
-  display: inline;
-}
-#tabs li a {
-  border: 1px solid #ccc;
-  padding: 4px 6px;
-  text-decoration: none;
-  background-color: #eeeeee;
-  border-bottom: none;
-  outline: none;
-  border-radius: 5px 5px 0 0;
-  -moz-border-radius: 5px 5px 0 0;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-}
-#tabs li a:hover {
-  background-color: #dddddd;
-  padding: 4px 6px;
-}
-#tabs li.active a {
-  border-bottom: 1px solid #fff;
-  background-color: #fff;
-  padding: 4px 6px 5px 6px;
-  border-bottom: none;
-}
-#tabs li.active a:hover {
-  background-color: #eeeeee;
-  padding: 4px 6px 5px 6px;
-  border-bottom: none;
-}
-#tabs li a.icon_accept {
-  background-image: url(accept.png);
-  background-position: 5px;
-  background-repeat: no-repeat;
-  padding-left: 24px;
-}
-#tabs li a.icon_accept:hover {
-  padding-left: 24px;
-}
-#tabs_content_container {
-  border: 1px solid #ccc;
-  border-top: none;
+.tabs-main .tabs a {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  float: left;
+  display: block;
   padding: 10px;
-  width: 400px;
+  width: 25%;
+  text-align: center;
+  color: color-text-primary;
 }
-.tab_content {
+.tabs-main .tabs a:hover {
+  color: color-text-second;
+  text-decoration: none;
+}
+.tabs-main .content {
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid #dddddd;
+}
+.tabs-main .tab-content {
   display: none;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-animation: bounce 0.5s;
+  -moz-animation: bounce 0.5s;
+  -ms-animation: bounce 0.5s;
+  -o-animation: bounce 0.5s;
+  animation: bounce 0.5s;
+}
+.tabs-main .active-tab {
+  background-color: #ec4777;
+  -webkit-animation: bounce 0.5s infinite;
+  -moz-animation: bounce 0.5s infinite;
+  -ms-animation: bounce 0.5s infinite;
+  -o-animation: bounce 0.5s infinite;
+  animation: bounce 0.5s infinite;
+}
+.tabs-main .active-content {
+  display: block;
 }
 #carosel-main .item img {
   margin-left: 10px;

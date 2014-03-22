@@ -5,35 +5,61 @@
     <title></title>
     <title>form</title>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <script src="assets/js/tabs.js"></script>
     <script src="assets/js/jquery-2.1.0.min.js"></script>
 </head>
 
 <body>
-    <div id="tabs_container">
-        <ul id="tabs">
-            <li class="active">
-                <a href="#tab1">Tab 1</a>
-            </li>
-            <li>
-                <a class="icon_accept" href="#tab2">Tab with icon</a>
-            </li>
-            <li>
-                <a href="#tab3">Long name for the last tab</a>
-            </li>
-        </ul>
-    </div>
-    <div id="tabs_content_container">
-        <div id="tab1" class="tab_content" style="display: block;">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh urna, euismod ut ornare non, volutpat vel tortor. Integer laoreet placerat suscipit. Sed sodales scelerisque commodo. Nam porta cursus lectus. Proin nunc erat, gravida a facilisis quis, ornare id lectus. Proin consectetur nibh quis urna gravida mollis.</p>
-        </div>
-        <div id="tab2" class="tab_content">
-            <p>This tab has icon in it.</p>
-        </div>
-        <div id="tab3" class="tab_content">
-            <p>Suspendisse blandit velit eget erat suscipit in malesuada odio venenatis.</p>
+    <div class="container">
+        <div class="tabs-main">
+            <!-- tabs anchor -->
+            <ul class="tabs">
+                <li class="active">
+                    <a href="#tab1">Tab 1</a>
+                </li>
+                <li>
+                    <a href="#tab2">Tab 2</a>
+                </li>
+                <li>
+                    <a href="#tab3">Tab 3</a>
+                </li>
+            </ul>
+
+
+            <!-- tab content -->
+            <div class="content">
+                <!-- content 1 -->
+                <div id="tab1" class="tab-content active-content">
+                    <p>content 1</p>
+                </div>
+                <!-- content 2 -->
+                <div id="tab2" class="tab-content">
+                    <p>content 2</p>
+                </div>
+                <!-- content 3 -->
+                <div id="tab3" class="tab-content">
+                    <p>content 3</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+jQuery(document).ready(function($) {
+    $('a').click(function(event) {
+        // remove nav tab active 
+        $('.tabs-main .tabs .active-tab').removeClass('active-tab');
+        // remove content active 
+        $('.tabs-main .content .active-content').removeClass('active-content');
+        // get id content from nav link
+        var activeTab = $(this).attr('href');
+        // active nav 
+        $(this).addClass('active-tab')
+        // active content
+        $(activeTab).addClass('active-content');
+        e.preventDefault();
+    });
+});
+</script>

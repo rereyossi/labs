@@ -5,7 +5,7 @@
 @btn-third: @color-third;
 @btn-hover-third: darken(@btn-third, 15%);
 @btn-color:#fff;
-@btn-radius:3px;
+@btn-radius: @radius;
 
 .btn-border(){
 	border-style: solid;
@@ -29,6 +29,8 @@
 	font-size: 14px;
 	line-height: 1.42857143;
 	border-radius: @btn-radius;
+	transition: @transite-time;
+	
 	&:hover{
 		text-decoration: none;
 		color: @btn-color;
