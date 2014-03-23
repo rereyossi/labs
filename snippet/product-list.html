@@ -1,29 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <link rel="stylesheet" href="">
-        <title>form vertical</title>
-        <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
-        <!-- validation form with javascript -->
-        <script src="../assets/js/jquery.validate.min.js "></script>
-        <!-- jquery -->
-        <script src="../assets/js/jquery-2.1.0.min.js"></script>
-    </head>
-    <body>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>product list</title>
+    <title>form vertical</title>
+    <link rel="stylesheet" type="text/css" href="../assets/css/main.css">
+    <!-- jquery -->
+    <script src="../assets/js/jquery-2.1.0.min.js"></script>
+</head>
+
+<body>
+    <div class="container margin-top">
+        <!-- product one -->
         <div class="product-list col-md-3">
             <figure>
                 <div class="img">
-                    <img src="http://placehold.it/300x400" alt="">
+                    <!-- <img src="../assets/img/wide.jpg" alt=""> -->
+                    <img src="../assets/img/vertical.jpg" alt="">
                 </div>
                 <figcaption>
-                	<h3>explanatory caption</h3>
-                	<span class="cost">harga</span>
-                	<span class="cart">cart</span>
+                    <h2 class="text-title">explanatory caption</h2>
+                    <div class="buy clearfix center-inline">
+                        <span class="price pull-left">Rp. 200000</span>
+                        <span class="cart pull-left"><i class="fa fa-shopping-cart"></i>
+                        </span>
+                    </div>
                 </figcaption>
             </figure>
         </div>
-    </body>
+        <!-- product two -->
+        <div class="product-list col-md-3">
+            <figure>
+                <div class="img">
+                    <!-- <img src="../assets/img/wide.jpg" alt=""> -->
+                    <img src="../assets/img/vertical.jpg" alt="">
+                    <span class="deal">Rp. 120000</span>
+                </div>
+                <figcaption>
+                    <h2 class="text-title">explanatory caption</h2>
+                    <div class="buy inlinebox center-inline">
+                        <span class="old-price inline">Rp. 200000</span>
+                        <span class="cart inline">
+                            <i class="fa fa-shopping-cart"></i>
+                        </span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+        <!-- product two -->
+        <div class="product-list col-md-3">
+            <figure>
+                <div class="img">
+                    <!-- <img src="../assets/img/wide.jpg" alt=""> -->
+                    <img src="../assets/img/vertical.jpg" alt="">
+                </div>
+                <figcaption>
+                    <h2 class="text-title">explanatory caption</h2>
+                    <div class="buy clearfix center-inline">
+                        <span class="price pull-left">Rp. 200000</span>
+                        <span class="cart pull-left"><i class="fa fa-shopping-cart"></i>
+                        </span>
+                    </div>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
 </html>

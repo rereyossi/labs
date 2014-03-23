@@ -5,18 +5,14 @@
     .tabs{
         overflow: hidden;
         background-color: @color-primary;
-        a{
-            -webkit-transition: 0.5s;
-            -moz-transition: 0.5s;
-            -ms-transition: 0.5s;
-            -o-transition: 0.5s;
-            transition: 0.5s;
+        li{
             float: left;
+        }
+        a{
             display: block;
-            padding: 10px;
-            width: 25%;
+            padding: 10px 12px;
             text-align: center;
-            color: color-text-primary;
+            color: #fff;
             &:hover{
                 color: color-text-second;
                 text-decoration: none;
@@ -39,11 +35,11 @@
         -ms-transition: 0.5s;
         -o-transition: 0.5s;
         transition: 0.5s;
-        -webkit-animation: bounce 0.5s;
-        -moz-animation: bounce 0.5s;
-        -ms-animation: bounce 0.5s;
-        -o-animation: bounce 0.5s;
-        animation: bounce 0.5s;
+        -webkit-animation: bounceInLeft 0.8s;
+        -moz-animation: bounceInLeft 0.8s;
+        -ms-animation: bounceInLeft 0.8s;
+        -o-animation: bounceInLeft 0.8s;
+        animation: bounceInLeft 0.8s;
         
         
     }
@@ -51,11 +47,6 @@
     // active nav tabs 
     .active-tab{
         background-color: @color-second;
-            -webkit-animation: bounce 0.5s infinite;
-        -moz-animation: bounce 0.5s infinite;
-        -ms-animation: bounce 0.5s infinite;
-        -o-animation: bounce 0.5s infinite;
-        animation: bounce 0.5s infinite;
     }
 
     // active content

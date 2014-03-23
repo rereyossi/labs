@@ -70,4 +70,6 @@ a:hover {
   margin-bottom: 10px;
   text-transform: capitalize;
   text-decoration: none;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
