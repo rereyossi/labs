@@ -129,8 +129,16 @@
 
 // inline list 
 .list-inline {
+    .clearfix;
     li {
-        display: inline-block;
+        float: left;
+        display: block;
+        position: relative;
+    }
+    a{
+        display: block;
+        padding-right: 10px;
+        padding-left: 10px;
     }
 }
 
