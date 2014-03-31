@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+</head>
+
+
+<script src="assets/js/jquery-2.1.0.min.js"></script>
+
+<body>
+    <div class="container margin-top">
+        <a class="anchor" href="#modal-wrapper">modal</a>
+        <div class="modal-wrapper">
+            div.modal-main
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    // $('.anchor').click(function(event) {
+    // 	$('.modal-wrapper').addClass('active-modal');
+    // });
+
+    // deactive
+    // $('.modal-wrapper').click(function(event) {
+    // 	$('.modal-wrapper').addClass('deactive-modal');
+    // });
+
+    // center elemen
+    // $( '.modal-box' ).center();
+    // var wrapper-height = $('.modal-wrapper').height();
+    // alert(wrapper-height);
+    jQuery.fn.center = function() {
+        this.css("position", "absolute");
+        this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) +
+            $(window).scrollTop()) + "px");
+        this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) +
+            $(window).scrollLeft()) + "px");
+        return this;
+    }
+     $( '.modal-box' ).center();
+
+});
+</script>

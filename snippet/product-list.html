@@ -66,7 +66,7 @@
                 </figcaption>
             </figure>
         </div>
-         <!-- product four -->
+        <!-- product four -->
         <div class="product-list col-md-3 col-sm-6">
             <figure>
                 <div class="img">
@@ -90,3 +90,30 @@
 </body>
 
 </html>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    function ratio() {
+        $('.img').each(function() {
+            var max_width = 300;
+            var max_height = 169;
+            var width = $(this).width();
+            var height = $(this).height();
+            var ratio = max_width / max_height;
+
+
+            // if (width > height) {
+            //     height = (height/width)*max_height;
+            // }else if(height > width){
+            //     max_width = (width/height)*max_width;
+            // }
+
+            // // $(this).css('width', max_width);
+            $(this).css('height', max_height*ratio);
+        });
+    }
+    ratio();
+    $(window).resize(function(event) {
+        ratio();
+    });
+});
+</script>

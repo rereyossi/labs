@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <meta charset=utf-8>
+    <meta name=description content="">
+    <!-- membaca perubahan width -->
+    <meta name=viewport content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" media="only screen and (max-width: 680px), only screen and (max-device-width: 680px)" href="mobile.css">
+</head>
+
+<body>
+    <div class="mobile">
+        mobie class
+    </div>
+</body>
+
+</html>
+<style>
+.mobile {
+-webkit-transition: background-color 0.2s;
+-moz-transition: background-color 0.2s;
+-ms-transition: background-color 0.2s;
+-o-transition: background-color 0.2s;
+transition: background-color 0.2s;
+
+}
+/*mobile landspace*/
+ @media only screen and (min-width: 480px) and (max-width: 767px), only screen and (max-device-width: 480px) and (max-device-width: 767px) {
+    .mobile {
+        background-color: blue;
+        height: 300px;
+    }
+}
+/*tablet*/
+ @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-device-width: 768px) and (max-device-width: 991px) {
+    .mobile {
+        background-color: yellow;
+        height: 400px;
+    }
+}
+/*desktop*/
+ @media only screen and (min-width: 990px), only screen and (max-device-width: 990px) {
+    .mobile {
+        background-color: red;
+        height: 500px;
+    }
+}
+</style>
