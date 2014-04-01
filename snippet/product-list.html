@@ -66,7 +66,7 @@
                 </figcaption>
             </figure>
         </div>
-         <!-- product four -->
+        <!-- product four -->
         <div class="product-list col-md-3 col-sm-6">
             <figure>
                 <div class="img">
@@ -90,3 +90,27 @@
 </body>
 
 </html>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    function ratio() {
+        $('.img').each(function() {
+            var ratio_width = 16;
+            var ratio_height = 9;
+            var width = $(this).width();
+
+            var new_heigh = Math.round((ratio_height*width)/ratio_width);
+
+
+            $(this).css('height', new_heigh);
+
+        });
+    }
+    ratio();
+    $(window).resize(function(event) {
+        ratio();
+    });
+});
+
+
+
+</script>

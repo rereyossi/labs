@@ -4,6 +4,7 @@
 <head>
     <title>pagging</title>
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+     <script src="assets/js/jquery-2.1.0.min.js"></script>
 </head>
 
 
@@ -41,3 +42,14 @@
 </body>
 
 </html>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $('.pagging-main a').on('click', function () {
+            $('.pagging-active').removeClass('pagging-active');
+            $(this).addClass('pagging-active');
+        });
+
+        var panjang = $('.pagging-main').width();
+        $('.pagging-box').css('width', panjang);
+    });
+</script>

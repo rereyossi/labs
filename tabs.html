@@ -13,7 +13,7 @@
         <div class="tabs-main">
             <!-- tabs anchor -->
             <ul class="tabs">
-                <li class="active">
+                <li class="active-tab">
                     <a href="#tab1">Tab 1</a>
                 </li>
                 <li>
@@ -48,21 +48,35 @@
 
 <script>
 jQuery(document).ready(function($) {
-    $('a').click(function(event) {
+    // $('a').click(function(event) {
+    //     // remove nav tab active 
+    //     $('.tabs-main .tabs .active-tab').removeClass('active-tab');
+    //     // remove content active 
+    //     $('.tabs-main .content .active-content').removeClass('active-content');
+    //     // get id content from nav link
+    //     var activeTab = $(this).attr('href');
+    //     // active nav 
+    //     $(this).addClass('active-tab')
+    //     // active content
+    //     $(activeTab).addClass('active-content');
+    //     e.preventDefault();
+
+    //     // url page same tabs active 
+    //     if (location.href) {};
+    // });
+
+    $(window).on('hashchange', function() {
+
+        var hash = window.location.hash;
         // remove nav tab active 
         $('.tabs-main .tabs .active-tab').removeClass('active-tab');
+        // tab active
+        $('.tabs-main li a[href="' + hash + '"]').addClass('active-tab');
         // remove content active 
-        $('.tabs-main .content .active-content').removeClass('active-content');
-        // get id content from nav link
-        var activeTab = $(this).attr('href');
-        // active nav 
-        $(this).addClass('active-tab')
+        $('.tabs-main .content .active-tab-content').removeClass('active-tab-content');
         // active content
-        $(activeTab).addClass('active-content');
-        e.preventDefault();
-
-        // url page same tabs active 
-        if (location.href) {};
+        $(hash).addClass('active-tab-content');
     });
+
 });
 </script>

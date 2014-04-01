@@ -1,29 +1,42 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <title>slider</title>
-    <link rel="stylesheet" type="text/css" href="assets/css/slider.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" type="text/css" href="assets/js/jcarosel/jcarousel.responsive.css">
     <link rel="stylesheet" type="text/css" href="assets/css/main.css">
-    <script src="assets/js/prefixfree.js"></script>
-    <script src="assets/js/slider.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+    <!-- jquery -->
+     <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js"></script>
+    <!-- bxslider -->
+    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/bxslider/jquery.bxslider.min.css">
 </head>
 
 <body>
-    <div class="container">
-        <div class="slider-main">
-            <div id="slide1_container" class="shadow">
-                <div id="slide1_images">
-                    <img src="C:\Users\yosyanto\Pictures\Img HD\slider1 (1).jpg" alt="">
-                    <img src="C:\Users\yosyanto\Pictures\Img HD\slider1 (2).jpg" alt="">
-                    <img src="C:\Users\yosyanto\Pictures\Img HD\slider1 (3).jpg" alt="">
-                </div>
-            </div>
-        </div>
-        <p id="slide1_controls"><span class="selected">Image 1</span><span>Image 2</span><span>Image 3</span><span>Image 4</span></p>
-    </div>
-    <div id="includeFooter“ csi:src=" type.html "></div>
+
+   <ul class="bxslider">
+        <li>
+            <img src="assets/img/wide.jpg" />
+        </li>
+        <li>
+            <img src="assets/img/wide.jpg" />
+        </li>
+        <li>
+            <img src="assets/img/wide.jpg" />
+        </li>
+        <li>
+            <img src="assets/img/wide.jpg" />
+        </li>
+    </ul>
+    <script>
+    $(document).ready(function() {
+        $('.bxslider').bxSlider();
+    });
+    </script>
+
 </body>
+
 </html>
