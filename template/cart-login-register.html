@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- jquery -->
+    <script src="http://img.jejualan.com/cdn/plugins/jquery/jquery-2.1.0.min.js"></script>
+
+
+    <!-- css primary -->
+    <link rel="stylesheet" href="../assets/css/rereyossi-style.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="cart-main">
+            <h1 class="text-title">Shopping cart</h1>
+            <div class="cart-step">
+                <ul>
+                    <li class="cart-step-active">
+                        <a href="#">langkah order</a>
+                    </li>
+                    <li class="cart-step-active">
+                        <a href="#">step</a>
+                    </li>
+                    <li class="cart-step-active">
+                        <a href="#">step</a>
+                    </li>
+                    <li class="cart-step-active">
+                        <a href="#">step</a>
+                    </li>
+                    <li>
+                        <a href="#">step</a>
+                    </li>
+                    <li>
+                        <a href="#">step</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row">
+                <!-- login form -->
+                <div class="cart-login-register col-md-4">
+                    <div class="cart-login deactive-primary">
+                        <h3 class="text-title">login</h3>
+                        <form action="" class="form-horizontal">
+
+                            <!-- username -->
+                            <div class="form-group">
+                                <label for="">email</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <!-- password -->
+                            <div class="form-group">
+                                <label for="">email</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <!-- submit -->
+                            <div class="form-group">
+                                <button class="btn btn-primary pull-right">login</button>
+                            </div>
+
+                        </form>
+                    </div>
+
+
+                    <!-- login form -->
+                    <div class="cart-register">
+                        <h3 class="text-title">daftar</h3>
+                        <a href="#" class="cart-login-achor">Sudah terdaftar</a>
+                        <form action="" class="form-horizontal">
+
+                            <!-- username -->
+                            <div class="form-group">
+                                <label for="">email</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <!-- password -->
+                            <div class="form-group">
+                                <label for="">email</label>
+                                <input type="text" class="form-control">
+                            </div>
+
+                            <!-- submit -->
+                            <div class="form-group">
+                                <button class="btn btn-primary pull-right">daftar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    $(function () {
+        $('.cart-login-achor').click(function(event) {
+            $('.cart-login').toggleClass('active-primary');
+        });
+    });
+</script>
