@@ -48,35 +48,32 @@
 
 <script>
 jQuery(document).ready(function($) {
-    // $('a').click(function(event) {
-    //     // remove nav tab active 
-    //     $('.tabs-main .tabs .active-tab').removeClass('active-tab');
-    //     // remove content active 
-    //     $('.tabs-main .content .active-content').removeClass('active-content');
-    //     // get id content from nav link
-    //     var activeTab = $(this).attr('href');
-    //     // active nav 
-    //     $(this).addClass('active-tab')
-    //     // active content
-    //     $(activeTab).addClass('active-content');
-    //     e.preventDefault();
-
-    //     // url page same tabs active 
-    //     if (location.href) {};
-    // });
-
-    $(window).on('hashchange', function() {
-
+    function tab() {
         var hash = window.location.hash;
-        // remove nav tab active 
+        if (hash > 0) {
+            // // remove nav tab active 
+            $('.tabs-main .tabs .active-tab').removeClass('active-tab');
+            // // tab active
+            $('.tabs-main li a[href="' + hash + '"]').addClass('active-tab');
+            // // remove content active 
+            $('.tabs-main .content .active-tab-content').removeClass('active-tab-content');
+            // // active content
+            $(hash).addClass('active-tab-content');
+        }
+    }
+    tab();
+    $(window).on('hashchange', function() {
+        var hash = window.location.hash;
+        // // remove nav tab active 
         $('.tabs-main .tabs .active-tab').removeClass('active-tab');
-        // tab active
+        // // tab active
         $('.tabs-main li a[href="' + hash + '"]').addClass('active-tab');
-        // remove content active 
+        // // remove content active 
         $('.tabs-main .content .active-tab-content').removeClass('active-tab-content');
-        // active content
+        // // active content
         $(hash).addClass('active-tab-content');
     });
+
 
 });
 </script>

@@ -395,7 +395,7 @@ ul li {
   transition: 0.5s;
 }
 .nav-vertical a:hover {
-  color: lighter(#4ea9f4, 40%);
+  color: #cccccc;
   text-decoration: none;
   background-color: #4ea9f4;
 }
@@ -535,14 +535,24 @@ ul li {
   text-decoration: none;
 }
 .alert-warning {
-  background-color: #f0ad4e;
-  border-color: #df8a13;
-  color: #df8a13;
+  background-color: #fcf8e3;
+  border-color: #faebcc;
+  color: #8a6d3b;
 }
 .alert-danger {
-  background-color: #d9534f;
-  border-color: #b52b27;
-  color: #b52b27;
+  background-color: #f2dede;
+  border-color: #ebccd1;
+  color: #a94442;
+}
+.alert-success {
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+  color: #3c763d;
+}
+.alert-info {
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+  color: #31708f;
 }
 .tabs-main {
   display: block;
@@ -641,7 +651,7 @@ ul li {
   padding-bottom: 20px;
 }
 .info #menu-bottom h3 {
-  color: lighter(#4ea9f4, 40%);
+  color: #cccccc;
 }
 .info #menu-bottom a {
   color: #fff;
@@ -656,7 +666,7 @@ ul li {
   background-color: #2A2A2A;
 }
 .connect h3 {
-  color: lighter(#4ea9f4, 40%);
+  color: #cccccc;
 }
 .connect .newsletter .form-group {
   margin-bottom: 0;
