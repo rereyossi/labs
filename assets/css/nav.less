@@ -129,8 +129,23 @@
 
 // inline list 
 .list-inline {
+    .clearfix;
     li {
-        display: inline-block;
+        float: left;
+                margin-right: 5px;
+    }
+    a{
+        padding: 8px 12px;
+        display: block;
+
+                -webkit-transition: @transite-time;
+        -moz-transition: @transite-time;
+        -ms-transition: @transite-time;
+        -o-transition: @transite-time;
+        transition: @transite-time;
+        &:hover{
+            text-decoration: none;
+        }
     }
 }
 

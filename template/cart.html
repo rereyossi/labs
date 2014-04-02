@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+
+    <!-- jquery -->
+    <script src="http://img.jejualan.com/cdn/plugins/jquery/jquery-2.1.0.min.js"></script>
+
+
+    <!-- css primary -->
+    <link rel="stylesheet" href="../assets/css/rereyossi-style.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div id="cart-main">
+            <h1 class="text-title">Shopping cart</h1>
+            <div class="cart-step">
+                <ul>
+                    <li class="cart-step-active">
+                        <a href="#">langkah order</a>
+                    </li>
+                    <li class="cart-step-active">
+                        <a href="#">step</a>
+                    </li>
+                    <li>
+                        <a href="#">step</a>
+                    </li>
+                    <li>
+                        <a href="#">step</a>
+                    </li>
+                    <li>
+                        <a href="#">step</a>
+                    </li>
+                    <li>
+                        <a href="#">step</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- table cart -->
+            <div class="cart-table table-responsive">
+                <table class="table table-bordered text-capital">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Product Name</th>
+                            <th>Harga (Rp)</th>
+                            <th>Diskon (%)</th>
+                            <th>Harga Diskon (Rp)</th>
+                            <th>Jumlah</th>
+                            <th>Total (Rp)</th>
+                            <th>Hapus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="td-img">
+                                <div class="img">
+                                    <img src="../assets/img/wide.jpg" alt="">
+                                </div>
+                            </td>
+                            <td>
+                                <a href="#">
+                                    The Prima II Black Collection
+                                </a>
+                            </td>
+                            <td align="right">
+                                699.00
+                            </td>
+                            <td>20%</td>
+                            <td align="right">
+                                699.00
+                            </td>
+                            <td class="td-qty">
+                                <input class="form-control" type="text" name="" value="" placeholder="">
+                            </td>
+                            <td align="right">699.00</td>
+                            <td align="center">
+                                <a href="#" class="cart-del"><i class="fa fa-trash-o "></i>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="6" align="right">
+                                <strong>Jumlah sub total belanja</strong>
+                            </td>
+                            <td align="right">
+                                <span class="cart-total">210.500</span>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="cart-extension row">
+                <!-- coupon code -->
+                <div class="cart-coupon col-md-4">
+                    <h4>kode kupon</h4>
+                        <form action="" class="form-inline">
+                            <div class="form-group">
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-primary">update kupon</button>
+                            </div>
+                        </form>
+                </div>
+                <!-- cart next -->
+                <div class="col-md-8">
+                    <div class="cart-next pull-right">
+                        <a href="" class="btn btn-second">belanja lagi</a>
+                        <a href="" class="btn btn-primary">cheakout</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
