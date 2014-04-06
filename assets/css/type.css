@@ -9,13 +9,13 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 h1 {
-  font-size: 3.8rem;
+  font-size: 2.1rem;
 }
 h2 {
-  font-size: 3.1rem;
+  font-size: 2.0rem;
 }
 h3 {
-  font-size: 2.4rem;
+  font-size: 1.8rem;
 }
 h4 {
   font-size: 1.7rem;
@@ -71,5 +71,4 @@ a:hover {
   text-transform: capitalize;
   text-decoration: none;
   text-overflow: ellipsis;
-  overflow: hidden;
 }

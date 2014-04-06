@@ -10,7 +10,7 @@
 
 <body>
     <div class="container margin-top">
-        <div class="pagging-box">
+        <div align="center">
             <ul class="pagging-main">
                 <li>
                     <a href="#">
@@ -48,8 +48,5 @@
             $('.pagging-active').removeClass('pagging-active');
             $(this).addClass('pagging-active');
         });
-
-        var panjang = $('.pagging-main').width();
-        $('.pagging-box').css('width', panjang);
     });
 </script>

@@ -1,4 +1,4 @@
-@alert-radius:@radius;
+@alert-radius:         @radius;
 @alert-primary:         #428bca;
 @alert-success:         #5cb85c;
 @alert-info:            #5bc0de;
@@ -10,10 +10,14 @@
 	box-sizing: border-box;
 	width: 100%;
 	padding: 12px 8px;
-	transition: 0.8s;
 	border-radius: @alert-radius;
 	margin-bottom: 20px;
-	transform: 0.25s;
+	-webkit-animation: bounce 0.5s;
+	-moz-animation: bounce 0.5s;
+	-ms-animation: bounce 0.5s;
+	-o-animation: bounce 0.5s;
+	animation: bounce 0.5s;
+	
 	a{
 		text-decoration: none;
 		&:hover{
@@ -36,12 +40,15 @@ border-color: #ebccd1;
 color: #a94442;
 }
 
+// alert success
 .alert-success{
 background-color: #dff0d8;
 border-color: #d6e9c6;
 color: #3c763d;
 }
 
+
+// alert info
 .alert-info{
 background-color: #d9edf7;
 border-color: #bce8f1;

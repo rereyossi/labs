@@ -28,7 +28,7 @@
             <!-- tab content -->
             <div class="content">
                 <!-- content 1 -->
-                <div id="tab1" class="tab-content active-content">
+                <div id="tab1" class="tab-content active-tab-content">
                     <p>content 1</p>
                 </div>
                 <!-- content 2 -->
@@ -48,25 +48,7 @@
 
 <script>
 jQuery(document).ready(function($) {
-    // $('a').click(function(event) {
-    //     // remove nav tab active 
-    //     $('.tabs-main .tabs .active-tab').removeClass('active-tab');
-    //     // remove content active 
-    //     $('.tabs-main .content .active-content').removeClass('active-content');
-    //     // get id content from nav link
-    //     var activeTab = $(this).attr('href');
-    //     // active nav 
-    //     $(this).addClass('active-tab')
-    //     // active content
-    //     $(activeTab).addClass('active-content');
-    //     e.preventDefault();
-
-    //     // url page same tabs active 
-    //     if (location.href) {};
-    // });
-
-    $(window).on('hashchange', function() {
-
+    function tabs_main() {
         var hash = window.location.hash;
         // remove nav tab active 
         $('.tabs-main .tabs .active-tab').removeClass('active-tab');
@@ -76,7 +58,17 @@ jQuery(document).ready(function($) {
         $('.tabs-main .content .active-tab-content').removeClass('active-tab-content');
         // active content
         $(hash).addClass('active-tab-content');
+    }
+
+    $(window).on('hashchange', function() {
+        tabs_main();
     });
+
+    var hash = window.location.hash;
+    if (hash) {
+        tabs_main();
+
+    };
 
 });
 </script>

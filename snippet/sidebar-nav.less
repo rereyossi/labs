@@ -1,0 +1,60 @@
+@import url('../assets/css/main.less');
+
+.nav-sidebar{
+	background-color: @color-second;
+	width: 180px;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	-webkit-transition: @transite-time;
+	-moz-transition: @transite-time;
+	-ms-transition: @transite-time;
+	-o-transition: @transite-time;
+	transition: @transite-time;
+	.close-left, .close-right{
+		display: block;
+		color: #fff;
+	}
+	ul{
+		border:none;
+	}
+	
+}
+.nav-sidebar-left{
+	left: -180px;
+}
+.nav-sidebar-right{
+	right: -180px;
+}
+
+.nav-sidebar-left-active{
+	left: 0 !important;
+}
+.nav-sidebar-right-active{
+	right: 0 !important;
+}
+
+#main{
+	-webkit-transition: @transite-time;
+	-moz-transition: @transite-time;
+	-ms-transition: @transite-time;
+	-o-transition: @transite-time;
+	transition: @transite-time;
+}
+
+.main-active-right{
+	-webkit-transform: translateX(-180px);
+	-moz-transform: translateX(-180px);
+	-ms-transform: translateX(-180px);
+	-o-transform: translateX(-180px);
+	transform: translateX(-180px);
+}
+.main-active-left{
+	-webkit-transform: translateX(180px);
+	-moz-transform: translateX(180px);
+	-ms-transform: translateX(180px);
+	-o-transform: translateX(180px);
+	transform: translateX(180px);
+}
+
+
