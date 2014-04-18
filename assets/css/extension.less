@@ -36,22 +36,22 @@
 	right: -15px;
 	.clearfix;
 }
+
 .container{
 	.clearfix;
 }
+
 // horizontal center elemen
-.center-inline{
-  display: block;
+.center-horizontal{
+  display: table;
   margin-left: auto;
   margin-right: auto;
-  .clearfix;
 }
 
 
 // vertical center table base
 .center-vertical{
 	display: table-cell;
-	text-align: center;
 	vertical-align: middle;
 	width: inherit;
 	height: inherit;
@@ -65,7 +65,7 @@
 	overflow: hidden;
 	width: 100%;
 	img{
-		width: inherit;
+		// width: inherit;
 		vertical-align: middle;
 		display: block;
 		position: relative;
@@ -83,3 +83,29 @@
 	}
 }
 
+
+
+// border 
+.border-primary{
+	border: 1px solid @color-line-primary;
+	padding: 15px;
+}
+
+// active elemen
+.active-primary{
+	display: block;
+}
+
+// deactive elemen
+.deactive-primary{
+	display: none;
+}
+
+// hidden elemen
+.hidden-primary{
+	visibility: none;
+}
+//show elemen
+.show-primary{
+	visibility:  visible;
+}

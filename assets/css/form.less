@@ -8,7 +8,7 @@
 .form-group{
     display: block;
     margin-bottom: 15px;
-    .clearfix();
+    .clearfix;
         label{
         display: inline-block;
     }
@@ -42,22 +42,13 @@ label {
 
 // form inline
 .form-inline{
-    .clearfix();
+    .clearfix;
     .form-group{
         display: inline;
         float: left;
     }
 }
 
-// form vertical 
-.form-vertical{
-    label{
-        text-align: right;
-    }
-    .form-input{
-
-    }
-}
 
 
 // text area 
@@ -90,16 +81,25 @@ textarea{
 
 // form radio and checkbox inline
 .radio-inline, .checkbox-inline{
-   .clearfix();
+   .clearfix;
     .radio, .checkbox{
-        padding-left:20px;
+        margin-right:20px;
         float: left;
         display: inline;
+
+        /*mobile devices*/
+        @media (max-width: 767px) {
+            margin-right: 0;
+            float: none; 
+            display: block;
+        }
     }
 }
 
-.radio-vertical, .checkbox-vertical{
-    .radio, .checkbox{
-        padding-left:20px;
+
+// nav horizontal
+.form-horizontal{
+    label{
+        text-align: right;
     }
 }

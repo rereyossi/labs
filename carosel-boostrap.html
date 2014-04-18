@@ -1,0 +1,27 @@
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+    $('#myCarousel').on('slide', function() {
+        $('.carousel-inner > .item .carousel-caption').css('display', 'none');
+    })
+    $('#myCarousel').on('slid', function() {
+        $('.carousel-inner > .item.active .carousel-caption').fadeIn("slow");
+    })
+});
+</script>
+<style type="text/css">
+.carousel-inner > .item .carousel-caption {
+    -moz-transition: all 0.1s linear;
+    -o-transition: all 0.1s linear;
+    -webkit-transition: 0.1s linear;
+    -ms-transition: all 0.1s linear;
+    transition: all 0.1s linear;
+}
+.carousel-inner > .item .carousel-caption {
+    opacity:0;
+    margin-top:100%;
+}
+.carousel-inner > .item.active .carousel-caption {
+    opacity:1;
+    margin-top:0;
+}
+</style>

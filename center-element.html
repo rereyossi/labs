@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>product list</title>
+    <title>form vertical</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- jquery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+    <script src="assets/js/jquery.center.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="display horizontal" align="center" style="background-color: blue">
+            <div class="box" align="left">center horizontal one</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="display horizontal" style="background-color: green">
+            <div class="box center-inline">center horizontal two</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="display center-vertical" style="background-color: yellow">
+            <div class="box">center vertical one</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<style type="text/css">
+.display {
+    height: 500px;
+    width: 100%;
+}
+.box {
+    padding: 10px;
+    height: 50%;
+    width: 50%;
+    background-color: red;
+}
+</style>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+
+
+
+        ;(function TimeThisMother() {
+            window.onload = function() {
+                setTimeout(function() {
+                    var t = performance.timing;
+                    alert("Speed of selection is: " + (t.loadEventEnd - t.responseEnd) + " milliseconds");
+                }, 0);
+            };
+        })();
+
+
+        });
+</script>

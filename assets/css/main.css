@@ -2,16 +2,6 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,600,700|Source+Sans+Pro:400,600,700);
 @import url('../font-awesome/css/font-awesome.min.css');
 @import url('../animate/animate.css');
-.border-primary {
-  border: 1px solid #dddddd;
-  padding: 15px;
-}
-.active-primary {
-  display: block;
-}
-.deactive-primary {
-  display: none;
-}
 html {
   font-size: 62.5%;
   color: #333;
@@ -133,9 +123,6 @@ label {
   display: inline;
   float: left;
 }
-.form-vertical label {
-  text-align: right;
-}
 textarea {
   min-height: 100px !important;
 }
@@ -177,30 +164,38 @@ textarea {
 .checkbox-inline .radio,
 .radio-inline .checkbox,
 .checkbox-inline .checkbox {
-  padding-left: 20px;
+  margin-right: 20px;
   float: left;
   display: inline;
+  /*mobile devices*/
 }
-.radio-vertical .radio,
-.checkbox-vertical .radio,
-.radio-vertical .checkbox,
-.checkbox-vertical .checkbox {
-  padding-left: 20px;
+@media (max-width: 767px) {
+  .radio-inline .radio,
+  .checkbox-inline .radio,
+  .radio-inline .checkbox,
+  .checkbox-inline .checkbox {
+    margin-right: 0;
+    float: none;
+    display: block;
+  }
+}
+.form-horizontal label {
+  text-align: right;
 }
 .nopadding {
   padding: 0px;
 }
 .margin-top {
-  margin-top: 20px;
+  margin-top: 15px;
 }
 .margin-bottom {
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 .margin-left {
-  margin-left: 20px;
+  margin-left: 15px;
 }
 .margin-right {
-  margin-right: 20px;
+  margin-right: 15px;
 }
 .clearfix:before,
 .clearfix:after {
@@ -230,22 +225,13 @@ textarea {
 .container:after {
   clear: both;
 }
-.center-inline {
-  display: block;
+.center-horizontal {
+  display: table;
   margin-left: auto;
   margin-right: auto;
 }
-.center-inline:before,
-.center-inline:after {
-  content: " ";
-  display: table;
-}
-.center-inline:after {
-  clear: both;
-}
 .center-vertical {
   display: table-cell;
-  text-align: center;
   vertical-align: middle;
   width: inherit;
   height: inherit;
@@ -257,7 +243,6 @@ textarea {
   width: 100%;
 }
 .img img {
-  width: inherit;
   vertical-align: middle;
   display: block;
   position: relative;
@@ -273,6 +258,22 @@ textarea {
 }
 .inlinebox .inline {
   float: left;
+}
+.border-primary {
+  border: 1px solid #dddddd;
+  padding: 15px;
+}
+.active-primary {
+  display: block;
+}
+.deactive-primary {
+  display: none;
+}
+.hidden-primary {
+  visibility: none;
+}
+.show-primary {
+  visibility: visible;
 }
 #nav-main {
   background-color: #4ea9f4;
@@ -498,14 +499,17 @@ ul li {
   line-height: 1.42857143;
   border-radius: 3px;
   transition: 0.5s;
+  border: 2px solid #eee;
 }
 .btn:hover {
   text-decoration: none;
   color: #ffffff;
+  background-color: #eee;
 }
 .btn-primary {
   background-color: #4ea9f4;
   color: #ffffff;
+  border: none;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -515,6 +519,7 @@ ul li {
 .btn-second {
   background-color: #ec4777;
   color: #ffffff;
+  border: none;
 }
 .btn-second:hover,
 .btn-second:focus,
@@ -524,6 +529,7 @@ ul li {
 .btn-third {
   background-color: #f7de71;
   color: #ffffff;
+  border: none;
 }
 .btn-third:hover,
 .btn-third:focus,
@@ -654,37 +660,12 @@ ul li {
   background: #333333;
   color: white;
 }
-/*mobile landspace*/
-/*tablet*/
-@media only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-device-width: 768px) and (max-device-width: 991px) {
-  .mobile {
-    background-color: yellow;
-    height: 400px;
-  }
-}
-/*desktop*/
-@media only screen and (min-width: 990px), only screen and (max-device-width: 990px) {
-  .mobile {
-    background-color: red;
-    height: 500px;
-  }
-}
-.nama {
-  height: 100px;
-  width: 100%;
-}
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5), only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
-  .nama {
-    background-color: #333;
-  }
+  background-color: #333;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-width: 768px) and (max-width: 991px), only screen and (max-device-width: 768px) and (max-device-width: 991px) {
-  .nama {
-    background-color: #000;
-  }
+  background-color: #000;
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-width: 992px), only screen and (max-device-width: 990px) {
-  .nama {
-    background-color: #eee;
-  }
+  background-color: #eee;
 }
